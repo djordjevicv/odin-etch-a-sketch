@@ -21,7 +21,7 @@
         <h1>Etch A Sketch</h1>
         <div class="container">
             <div>
-                <div id="colorsContainer">
+                <div class="componentContainer">
                     <div class="buttonsContainer">
                         <button class="pickMe withInput"><input type="color"></button>
                         <button class="pickMe">Eraser</button>
@@ -40,10 +40,15 @@
                         </div>
                     </div>    
                 </div>
-                <button id="changeGridSize" class="pickMe">Change grid size</button>
+                <div class="componentContainer change">
+                    <p>Current grid size: <span id="gridDimensions">10</span></p>
+                    <button id="changeGridSize" class="pickMe">Change grid size</button>
+                </div>
+                
             </div>
             <div id="drawingGrid"></div>
         </div>
+        <dialog class="changeGridDialog">I exist</dialog>
     </main>
     <footer>
         <p class="footerText">Copyright © 2022 djordjevicv</p>

@@ -45,7 +45,7 @@ h1{
     max-width: 1000px;
     position: relative;
 }
-#colorsContainer{
+.componentContainer{
     width: 300px;
     height: 350px;
     padding: 20px;
@@ -54,6 +54,25 @@ h1{
     border-radius: 10px;
     box-shadow: 2px 2px 4px black;
     transition: all 0.5s;
+}
+.componentContainer *{
+    color: var(--background);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+}
+.change{
+    margin-top: 20px;
+    height: min-content;
+    flex-direction: column;
+    text-align: center;
+}
+.change p, #gridDimensions, #currentColor{
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--background);
+    margin-top: 5px;
+    text-align: center;
 }
 .buttonsContainer,#functionalities{
     display: flex;
@@ -70,10 +89,6 @@ h1{
     width: 110px;
     padding:10px;
     background: var(--button);
-    color: var(--background);
-    font-family: inherit;
-    font-size: 15px;
-    font-weight: 800;
     border: none;
     border-radius: 5px;
     box-shadow: 3px 3px 5px black;
@@ -141,7 +156,7 @@ input[type="color"]{
 
 #changeGridSize{
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 10px;
     display: block;
     width: 200px;
 }
@@ -169,15 +184,22 @@ footer a{
 footer a:hover{
     transform: rotate(360deg) scale(1.1);
 }
-
+.changeGridDialog{
+    background: var(--containerBackground);
+    width: 50vh;
+    height: 50vh;
+    margin: 0 auto;
+    position: relative;
+    top:25vh;
+}
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {...}
+@media only screen and (max-width: 600px) {}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {...}
+@media only screen and (min-width: 600px) {}
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {...}
+@media only screen and (min-width: 768px) {}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 1000px) {
