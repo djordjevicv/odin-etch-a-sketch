@@ -1,0 +1,206 @@
+:root{
+    --background:#DCD7C9;
+    --containerBackground:#3F4E4F;
+    --text:#2C3639;
+    --button:#A27B5C;
+}
+*,::before,::after{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    margin: 0;
+}
+body{
+    position: relative;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+    background: var(--background);
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+main{
+    position: relative;
+}
+h1{
+    text-align: center;
+    color:var(--text);
+    font-size: 4rem;
+    font-family: inherit;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+.container{
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:100px;
+    max-width: 1000px;
+    position: relative;
+}
+#colorsContainer{
+    width: 300px;
+    height: 350px;
+    padding: 20px;
+    display: flex;
+    background: var(--containerBackground);
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px black;
+    transition: all 0.5s;
+}
+.buttonsContainer,#functionalities{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.buttonsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+}
+.pickMe{
+    width: 110px;
+    padding:10px;
+    background: var(--button);
+    color: var(--background);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px black;
+    transition: all 0.5s;
+}
+.pickMe:hover{
+    transform: scale(0.95);
+    opacity: 0.9;
+    transition: all 0.5s;
+}
+.pickMe.withIcon{
+    width: min-content;
+    padding: 10px;
+}
+input[type="color"]{
+    width: 100%;
+    border: none;
+    border-image-width: 0;
+    background-color: var(--button);
+}
+.active{
+    background-color: var(--background);
+    color: var(--text);
+}
+.pickMe img{
+    width: 40px;
+    color: #A27B5C;
+}
+#rightContainer{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#currentColor{
+    width: 100px;
+    height: 100px;
+    background:black;
+    border: 10px;
+    border-radius: 50%;
+}
+#currentColor + p{
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--background);
+    margin-top: 5px;
+    text-align: center;
+}
+#functionalities{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+#functionalities .pickMe:first-of-type{
+    margin-bottom: 15px;
+}
+
+#drawingGrid{
+    width: 500px;
+    height: 500px;
+    background-color: white;
+}
+
+#changeGridSize{
+    margin: 0 auto;
+    margin-top: 20px;
+    display: block;
+    width: 200px;
+}
+footer{
+    font-size: 20px;
+    margin-top: auto;
+    text-align: center;
+    color: var(--text);
+    font-family: inherit;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+footer p{
+    padding: 20px 0;
+}
+footer a{
+    color:var(--text);
+    font-size: 30px;
+    transition: all 0.5s;
+    margin-left: 5px;
+}
+footer a:hover{
+    transform: rotate(360deg) scale(1.1);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 1000px) {
+
+    #colorsContainer{
+        width: 200px;
+        height: 250px;
+    }
+    .pickMe{
+        width: 50px;
+        padding:5px;
+        font-size: 10px;
+        font-weight: 800;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 3px 3px 5px black;
+        transition: all 0.5s;
+    }
+    #drawingGrid{
+        width: 300px;
+        height: 300px;
+    }
+    .container{
+        margin: 0 auto;
+    }
+}
