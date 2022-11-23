@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etch A Sketch</title>
+    <title>Pixel Sketch</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,20 +15,20 @@
       crossorigin="anonymous"
     />         
 </head>
-<body>
+<body draggable="false">
     <main>
-        <h1>Etch A Sketch</h1>
+        <h1>Pixel Sketch</h1>
         <div class="container">
             <div>
                 <div class="componentContainer">
                     <div class="buttonsContainer">
-                        <button class="pickMe withInput"><input type="color"></button>
+                        <button class="pickMe withInput active"><input type="color" class="active"></button>
                         <button class="pickMe">Eraser</button>
                         <button class="pickMe">Shade</button>
                         <button class="pickMe">Lighten</button>
                         <button class="pickMe">Rainbow</button>
                         <button class="pickMe">Autumn</button>
-                        <button class="pickMe active">Winter</button>
+                        <button class="pickMe">Winter</button>
                     </div>
                     <div id="rightContainer">
                         <div id="currentColor"></div>
@@ -46,9 +45,14 @@
                 </div>
                 
             </div>
-            <div id="drawingGrid"></div>
+            <div id="drawingGrid" draggable="false"></div>
         </div>
-        <dialog class="changeGridDialog">I exist</dialog>
+        <dialog class="changeGridDialog">
+            <div id="exitModule">X</div>
+            <p>Enter new grid value:</p>
+            <input type="text" name="enterGridValue" placeholder="between 1 and 64"/>
+            <button id="finishGridChange" class="pickMe">Finish</button>
+        </dialog>
     </main>
     <footer>
         <p class="footerText">Copyright © 2022 djordjevicv</p>

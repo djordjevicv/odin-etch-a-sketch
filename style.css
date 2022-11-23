@@ -3,6 +3,18 @@
     --containerBackground:#3F4E4F;
     --text:#2C3639;
     --button:#A27B5C;
+
+    --gridBackground:#FEFEFE;
+
+    --autumn1:#876445;
+    --autumn2:#CA965C;
+    --autumn3:#EEC373;
+    --autumn4:#F4DFBA;
+
+    --winter1:#8EC3B0;
+    --winter2:#9ED5C5;
+    --winter3:#BCEAD5;
+    --winter4:#DEF5E5;
 }
 *,::before,::after{
     margin: 0;
@@ -34,16 +46,17 @@ h1{
     font-family: inherit;
     font-weight: 800;
     margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 .container{
     margin: 0 auto;
-    width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     gap:100px;
-    max-width: 1000px;
+    max-width: 1200px;
     position: relative;
+    transition: all 0.2s;
 }
 .componentContainer{
     width: 300px;
@@ -53,7 +66,7 @@ h1{
     background: var(--containerBackground);
     border-radius: 10px;
     box-shadow: 2px 2px 4px black;
-    transition: all 0.5s;
+    transition: all 0.2s;
 }
 .componentContainer *{
     color: var(--background);
@@ -92,12 +105,16 @@ h1{
     border: none;
     border-radius: 5px;
     box-shadow: 3px 3px 5px black;
-    transition: all 0.5s;
+    transition: all 0.2s;
+    color: var(--background);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
 }
 .pickMe:hover{
     transform: scale(0.95);
     opacity: 0.9;
-    transition: all 0.5s;
+    transition: all 0.2s;
 }
 .pickMe.withIcon{
     width: min-content;
@@ -108,8 +125,16 @@ input[type="color"]{
     border: none;
     border-image-width: 0;
     background-color: var(--button);
+    color: var(--button);
+    border-color: var(--button);
+
 }
 .active{
+    background-color: var(--background);
+    color: var(--text);
+}
+input[type="color"].active{
+    border: var(--background);
     background-color: var(--background);
     color: var(--text);
 }
@@ -151,7 +176,7 @@ input[type="color"]{
 #drawingGrid{
     width: 500px;
     height: 500px;
-    background-color: white;
+    background-color: var(--gridBackground);
 }
 
 #changeGridSize{
@@ -182,47 +207,179 @@ footer a{
     margin-left: 5px;
 }
 footer a:hover{
-    transform: rotate(360deg) scale(1.1);
+    transform: rotateY(360deg) rotateZ(45deg);
 }
 .changeGridDialog{
+    width: 300px;
+    max-width: 300px;
+    padding: 20px;
     background: var(--containerBackground);
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px black;
+    transition: all 0.2s;
     width: 50vh;
-    height: 50vh;
+    height: min-content;
     margin: 0 auto;
-    position: relative;
-    top:25vh;
+    border: none;
+    top:25vh;   
+}
+.changeGridDialog::backdrop{
+    background: rgba(0,0,0,0.8);
+}
+#exitModule{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--background);
+    background: #ec03039a;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top:2px;
+    left:2px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+#exitModule:hover{
+    scale: 0.9;
+    opacity: 0.6;
+}
+.changeGridDialog p{
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--background);
+    margin-top: 5px;
+    text-align: center;
+}
+.changeGridDialog input{
+    margin: 0 auto;
+    display: block;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text);
+    height: 30px;
+    margin-top: 10px;
+    text-align: center;
+}
+#finishGridChange{
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 15px;
+    width: 50%;
+}
+::placeholder{
+    font-size: 0.8em;
+}
+.changeGridDialog:not([open]) { 
+    display: none 
 }
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (max-width: 1000px) {
-
-    #colorsContainer{
-        width: 200px;
-        height: 250px;
-    }
-    .pickMe{
-        width: 50px;
-        padding:5px;
-        font-size: 10px;
-        font-weight: 800;
-        border: none;
-        border-radius: 5px;
-        box-shadow: 3px 3px 5px black;
-        transition: all 0.5s;
+@media only screen and (max-width: 950px) {
+    .container{
+        gap: 40px;
     }
     #drawingGrid{
-        width: 300px;
-        height: 300px;
+        height: 400px;
+        width: 400px;
     }
+    .componentContainer{
+        height: 300px;
+        width: 250px;
+    }
+    .change{
+        height: min-content;
+    }
+    #functionalities{
+        margin-top: 20px;
+    }
+    .pickMe{
+        width: 100px;
+        font-size: 12px;
+    }
+    .pickMe img{
+        width: 30px;
+    }
+    #currentColor{
+        width: 70px;
+        height: 70px;
+    }
+    .change p, #gridDimensions, #currentColor + p{
+        font-size: 15px;
+    }
+    
+}
+@media only screen and (max-width: 730px) {
     .container{
-        margin: 0 auto;
+        flex-direction: column-reverse;
+    }
+    footer{
+        font-size: 15px;
+        margin-top: 40px;
+    }
+    footer p{
+        padding: 10px 0;
+    }
+    footer a{
+        color:var(--text);
+        font-size: 20px;
+        transition: all 0.5s;
+        margin-left: 5px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    h1{
+        font-size: 3.5rem;
+    }
+    #drawingGrid{
+        height: 300px;
+        width: 300px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    h1{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+
+    }
+    #drawingGrid{
+        height: 250px;
+        width: 250px;
+    }
+    .changeGridDialog{
+        width: 250px;
+        max-width: 200px;
+        
+    }
+    .changeGridDialog input{
+        max-width: 150px;
+    }
+    .changeGridDialog p{
+        font-size: 15px;
+    }
+    #exitModule{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: inherit;
+        font-weight: 800;
+        font-size: 15px;
+        color: var(--background);
+        background: #ec03039a;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top:3px;
+        left:3px;
+        transition: all 0.2s;
+        cursor: pointer;
+    }
+    ::placeholder{
+        font-size: 0.6em;
     }
 }
