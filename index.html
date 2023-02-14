@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;800&display=swap" rel="stylesheet">
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
-      crossorigin="anonymous"
-    />         
+    <link rel="stylolesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
 </head>
+
 <body draggable="false">
     <main>
         <h1>Pixel Sketch</h1>
@@ -35,16 +33,16 @@
                         </div>
                         <p>Current Color</p>
                         <div id="functionalities">
-                            <button class="pickMe withIcon" id="Screenshot"><img src="camera.png"/></button>
-                            <button class="pickMe withIcon"><img src="free-trash-icon-347-thumb.png"/></button>
+                            <!-- <<button class="pickMe withIcon" id="Screenshot"><img src="camera.png"/></button> -->
+                            <button class="pickMe withIcon"><img src="free-trash-icon-347-thumb.png" />
                         </div>
-                    </div>    
+                    </div>
                 </div>
                 <div class="componentContainer change">
                     <p>Current grid size: <span id="gridDimensions">10</span></p>
                     <button id="changeGridSize" class="pickMe">Change grid size</button>
                 </div>
-                
+
             </div>
             <div id="drawingGrid" draggable="false">
             </div>
@@ -52,7 +50,7 @@
         <dialog class="changeGridDialog">
             <div id="exitModule">X</div>
             <p>Enter new grid value:</p>
-            <input type="text" name="enterGridValue" placeholder="between 1 and 64"/>
+            <input type="text" name="enterGridValue" placeholder="between 1 and 64" />
             <button id="finishGridChange" class="pickMe">Finish</button>
         </dialog>
     </main>
@@ -62,4 +60,5 @@
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
