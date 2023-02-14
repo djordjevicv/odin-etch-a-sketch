@@ -1,30 +1,36 @@
-:root{
-    --background:#DCD7C9;
-    --containerBackground:#3F4E4F;
-    --text:#2C3639;
-    --button:#A27B5C;
+:root {
+    --background: #DCD7C9;
+    --containerBackground: #3F4E4F;
+    --text: #2C3639;
+    --button: #A27B5C;
 
-    --gridBackground:#FEFEFE;
+    --gridBackground: #FEFEFE;
 
-    --autumn1:#876445;
-    --autumn2:#CA965C;
-    --autumn3:#EEC373;
-    --autumn4:#F4DFBA;
+    --autumn1: #876445;
+    --autumn2: #CA965C;
+    --autumn3: #EEC373;
+    --autumn4: #F4DFBA;
 
-    --winter1:#8EC3B0;
-    --winter2:#9ED5C5;
-    --winter3:#BCEAD5;
-    --winter4:#DEF5E5;
+    --winter1: #8EC3B0;
+    --winter2: #9ED5C5;
+    --winter3: #BCEAD5;
+    --winter4: #DEF5E5;
 }
-*,::before,::after{
+
+*,
+::before,
+::after {
     margin: 0;
     padding: 0;
 }
-html,body{
+
+html,
+body {
     width: 100%;
     margin: 0;
 }
-body{
+
+body {
     position: relative;
     box-sizing: border-box;
     font-size: 62.5%;
@@ -36,29 +42,33 @@ body{
     display: flex;
     flex-direction: column;
 }
-main{
+
+main {
     position: relative;
 }
-h1{
+
+h1 {
     text-align: center;
-    color:var(--text);
+    color: var(--text);
     font-size: 4rem;
     font-family: inherit;
     font-weight: 800;
     margin-bottom: 2rem;
     margin-top: 2rem;
 }
-.container{
+
+.container {
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:100px;
+    gap: 100px;
     max-width: 1200px;
     position: relative;
     transition: all 0.2s;
 }
-.componentContainer{
+
+.componentContainer {
     width: 300px;
     height: 350px;
     padding: 20px;
@@ -68,39 +78,48 @@ h1{
     box-shadow: 2px 2px 4px black;
     transition: all 0.2s;
 }
-.componentContainer *{
+
+.componentContainer * {
     color: var(--background);
     font-family: inherit;
     font-size: 15px;
     font-weight: 800;
 }
-.change{
+
+.change {
     margin-top: 20px;
     height: min-content;
     flex-direction: column;
     text-align: center;
 }
-.change p, #gridDimensions, #currentColor{
+
+.change p,
+#gridDimensions,
+#currentColor {
     font-size: 20px;
     font-weight: 800;
     color: var(--background);
     margin-top: 5px;
     text-align: center;
 }
-.buttonsContainer,#functionalities{
+
+.buttonsContainer,
+#functionalities {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.buttonsContainer{
+
+.buttonsContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 50%;
 }
-.pickMe{
+
+.pickMe {
     width: 110px;
-    padding:10px;
+    padding: 10px;
     background: var(--button);
     border: none;
     border-radius: 5px;
@@ -111,16 +130,19 @@ h1{
     font-size: 15px;
     font-weight: 800;
 }
-.pickMe:hover{
+
+.pickMe:hover {
     transform: scale(0.95);
     opacity: 0.9;
     transition: all 0.2s;
 }
-.pickMe.withIcon{
+
+.pickMe.withIcon {
     width: min-content;
     padding: 10px;
 }
-input[type="color"]{
+
+input[type="color"] {
     width: 100%;
     border: none;
     border-image-width: 0;
@@ -129,20 +151,24 @@ input[type="color"]{
     border-color: var(--button);
 
 }
-.active{
+
+.active {
     background-color: var(--background);
     color: var(--text);
 }
-input[type="color"].active{
+
+input[type="color"].active {
     border: var(--background);
     background-color: var(--background);
     color: var(--text);
 }
-.pickMe img{
+
+.pickMe img {
     width: 40px;
     color: #A27B5C;
 }
-#rightContainer{
+
+#rightContainer {
     height: 100%;
     width: 50%;
     display: flex;
@@ -150,42 +176,48 @@ input[type="color"].active{
     justify-content: center;
     align-items: center;
 }
-#currentColor{
+
+#currentColor {
     width: 100px;
     height: 100px;
-    background:black;
+    background: black;
     border: 10px;
     border-radius: 50%;
+    margin-top: 0;
 }
-#currentColor + p{
+
+#currentColor+p {
     font-size: 20px;
     font-weight: 800;
     color: var(--background);
     margin-top: 5px;
     text-align: center;
 }
-#functionalities{
+
+#functionalities {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
 }
-#functionalities .pickMe:first-of-type{
-    margin-bottom: 15px;
+
+#functionalities .pickMe:first-of-type {
+    /* margin-bottom: 15px;*/
 }
 
-#drawingGrid{
+#drawingGrid {
     width: 500px;
     height: 500px;
     background-color: var(--gridBackground);
 }
 
-#changeGridSize{
+#changeGridSize {
     margin: 0 auto;
     margin-top: 10px;
     display: block;
     width: 200px;
 }
-footer{
+
+footer {
     font-size: 20px;
     margin-top: auto;
     text-align: center;
@@ -197,19 +229,23 @@ footer{
     justify-content: center;
     position: relative;
 }
-footer p{
+
+footer p {
     padding: 20px 0;
 }
-footer a{
-    color:var(--text);
+
+footer a {
+    color: var(--text);
     font-size: 30px;
     transition: all 0.5s;
     margin-left: 5px;
 }
-footer a:hover{
+
+footer a:hover {
     transform: rotateY(360deg) rotateZ(45deg);
 }
-.changeGridDialog{
+
+.changeGridDialog {
     width: 300px;
     max-width: 300px;
     padding: 20px;
@@ -221,12 +257,14 @@ footer a:hover{
     height: min-content;
     margin: 0 auto;
     border: none;
-    top:25vh;   
+    top: 25vh;
 }
-.changeGridDialog::backdrop{
-    background: rgba(0,0,0,0.8);
+
+.changeGridDialog::backdrop {
+    background: rgba(0, 0, 0, 0.8);
 }
-#exitModule{
+
+#exitModule {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -239,23 +277,26 @@ footer a:hover{
     width: 30px;
     height: 30px;
     position: absolute;
-    top:2px;
-    left:2px;
+    top: 2px;
+    left: 2px;
     transition: all 0.2s;
     cursor: pointer;
 }
-#exitModule:hover{
+
+#exitModule:hover {
     scale: 0.9;
     opacity: 0.6;
 }
-.changeGridDialog p{
+
+.changeGridDialog p {
     font-size: 25px;
     font-weight: 800;
     color: var(--background);
     margin-top: 5px;
     text-align: center;
 }
-.changeGridDialog input{
+
+.changeGridDialog input {
     margin: 0 auto;
     display: block;
     font-size: 20px;
@@ -265,103 +306,129 @@ footer a:hover{
     margin-top: 10px;
     text-align: center;
 }
-#finishGridChange{
+
+#finishGridChange {
     display: block;
     margin: 0 auto;
     margin-top: 20px;
     font-size: 15px;
     width: 50%;
 }
-::placeholder{
+
+::placeholder {
     font-size: 0.8em;
 }
-.changeGridDialog:not([open]) { 
-    display: none 
+
+.changeGridDialog:not([open]) {
+    display: none
 }
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 950px) {
-    .container{
+    .container {
         gap: 40px;
     }
-    #drawingGrid{
+
+    #drawingGrid {
         height: 400px;
         width: 400px;
     }
-    .componentContainer{
+
+    .componentContainer {
         height: 300px;
         width: 250px;
     }
-    .change{
+
+    .change {
         height: min-content;
     }
-    #functionalities{
+
+    #functionalities {
         margin-top: 20px;
     }
-    .pickMe{
+
+    .pickMe {
         width: 100px;
         font-size: 12px;
     }
-    .pickMe img{
+
+    .pickMe img {
         width: 30px;
     }
-    #currentColor{
+
+    #currentColor {
         width: 70px;
         height: 70px;
     }
-    .change p, #gridDimensions, #currentColor + p{
+
+    .change p,
+    #gridDimensions,
+    #currentColor+p {
         font-size: 15px;
     }
-    
+
 }
+
 @media only screen and (max-width: 730px) {
-    .container{
+    .container {
         flex-direction: column-reverse;
     }
-    footer{
+
+    footer {
         font-size: 15px;
         margin-top: 40px;
     }
-    footer p{
+
+    footer p {
         padding: 10px 0;
     }
-    footer a{
-        color:var(--text);
+
+    footer a {
+        color: var(--text);
         font-size: 20px;
         transition: all 0.5s;
         margin-left: 5px;
     }
 }
+
 @media only screen and (max-width: 500px) {
-    h1{
+    h1 {
         font-size: 3.5rem;
     }
-    #drawingGrid{
+
+    #drawingGrid {
         height: 300px;
         width: 300px;
     }
 }
+
 @media only screen and (max-width: 400px) {
-    h1{
+    h1 {
         font-size: 2rem;
         margin-bottom: 2rem;
 
     }
-    #drawingGrid{
+
+    #drawingGrid {
         height: 250px;
         width: 250px;
     }
-    .changeGridDialog{
+
+    .changeGridDialog {
         width: 250px;
         max-width: 200px;
-        
+
     }
-    .changeGridDialog input{
+
+    .changeGridDialog input {
         max-width: 150px;
     }
-    .changeGridDialog p{
+
+    .changeGridDialog p {
         font-size: 15px;
     }
-    #exitModule{
+
+    #exitModule {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -374,12 +441,13 @@ footer a:hover{
         width: 20px;
         height: 20px;
         position: absolute;
-        top:3px;
-        left:3px;
+        top: 3px;
+        left: 3px;
         transition: all 0.2s;
         cursor: pointer;
     }
-    ::placeholder{
+
+    ::placeholder {
         font-size: 0.6em;
     }
 }
