@@ -1,1 +1,1 @@
-# odin-etch-a-sketch
+Pixel Sketch
